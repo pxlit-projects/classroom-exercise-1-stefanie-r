@@ -12,11 +12,6 @@ repositories {
     mavenCentral()
 }
 
-jar {
-    baseName = 'classroom-entmob-1'
-    version = project.version
-}
-
 dependencies {
 
     testCompile ("junit:junit:4.12")
