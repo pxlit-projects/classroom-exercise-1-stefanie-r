@@ -10,11 +10,26 @@ public class MoonDollahsCoffeeShop {
     private List<Barista> baristas = new ArrayList<>();
 
     MoonDollahsCoffeeShop() {
+        WorkEthic lazy = new LazyWorkEthic();
+        WorkEthic badHearing = new BadHearingWorkEthic();
+        WorkEthic friendly = new CustomerFriendlyWorkEthic();
         Barista vicky = new Barista("vicky");
-        Barista emma = new Barista("gemma");
+        Barista gemmaA = new Barista("gemma");
         Barista gianluca = new Barista("gianluca");
+        Barista gemmaB = new Barista("gemma");
+        vicky.setWorkEthic(lazy);
+        gemmaA.setWorkEthic(badHearing);
+        gianluca.setWorkEthic(friendly);
+        gemmaB.setWorkEthic(friendly);
+        baristas = Arrays.asList(vicky, gemmaA, gianluca, gemmaB);
+    }
 
-        baristas = Arrays.asList(vicky, emma, gianluca);
+    public static void main(String[] args) {
+        MoonDollahsCoffeeShop shop = new MoonDollahsCoffeeShop();
+
+
+        List<String> customers = Arrays.asList("meliodas", "ban", "elizabeth", "king", "merlin", "howther", "diane", "escanor");
+        shop.serve(customers);
     }
 
     private void serve(List<String> customers) {
@@ -28,14 +43,6 @@ public class MoonDollahsCoffeeShop {
 
     List<Barista> getBaristas() {
         return baristas;
-    }
-
-    public static void main(String[] args) {
-        MoonDollahsCoffeeShop shop = new MoonDollahsCoffeeShop();
-
-
-        List<String> customers = Arrays.asList("meliodas", "ban", "elizabeth", "king", "merlin", "howther", "diane", "escanor");
-        shop.serve(customers);
     }
 
 }

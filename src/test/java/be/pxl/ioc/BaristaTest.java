@@ -10,7 +10,9 @@ public class BaristaTest {
     @Test
     public void serve_GivenABaristaWithACustomerFriendlyWorkEthic_CustomerIsSatisfied_AndGotProperName() throws Exception {
         String customer = "meliodas";
-        CustomerExperience customerExperience = new Barista("vicky").serve(customer);
+        Barista vicky = new Barista("vicky");
+        vicky.setWorkEthic(new CustomerFriendlyWorkEthic());
+        CustomerExperience customerExperience = vicky.serve(customer);
 
         assertThat(customerExperience.getCustomer()).isEqualTo(customer);
         assertThat(customerExperience.getHappiness()).isEqualTo("satisfied");
@@ -20,7 +22,9 @@ public class BaristaTest {
     @Test
     public void serve_GivenABaristaWithALazyWorkEthic_CustomerIsNotSatisfied_AndDidNotGetProperName() throws Exception {
         String customer = "ban";
-        CustomerExperience customerExperience = new Barista("gemma").serve(customer);
+        Barista gemma = new Barista("gemma");
+        gemma.setWorkEthic(new LazyWorkEthic());
+        CustomerExperience customerExperience = gemma.serve(customer);
 
         assertThat(customerExperience.getCustomer()).isEqualTo(customer);
         assertThat(customerExperience.getHappiness()).isEqualTo("unsatisfied");
@@ -30,7 +34,9 @@ public class BaristaTest {
     @Test
     public void serve_GivenABaristaWithABadHearingWorkEthic_CustomerIsSatisfied_ButDidNotGetProperName() throws Exception {
         String customer = "elizabeth";
-        CustomerExperience customerExperience = new Barista("gianluca").serve(customer);
+        Barista els = new Barista("els");
+        els.setWorkEthic(new BadHearingWorkEthic());
+        CustomerExperience customerExperience = els.serve(customer);
 
         assertThat(customerExperience.getCustomer()).isEqualTo(customer);
         assertThat(customerExperience.getHappiness()).isEqualTo("satisfied");

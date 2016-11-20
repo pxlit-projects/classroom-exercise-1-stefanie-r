@@ -5,7 +5,8 @@ Our MoonDollahs CoffeeShop has some baristas with their own work ethic and is se
 
 Some baristas will get the customers name wrong because they're lazy or can't hear very well.
 
-Right now we know of 3 baristas: _Vicky_, _Gemma_ and _Gianluca_. What happens when we hire a new barista who's also called _Gemma_, but has a **different work ethic**?
+Right now we know of 3 baristas: _Vicky_, _Gemma_ and _Gianluca_.
+What happens when we hire a new barista who's also called _Gemma_, but has a **different work ethic**?
 
 Your job is to refactor the code so responsibilities of classes are distributed properly, so we can more easily add a new barista.
 

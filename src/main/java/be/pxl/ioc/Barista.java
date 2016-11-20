@@ -8,15 +8,6 @@ class Barista {
 
     Barista(String name) {
         this.name = name;
-        if (Objects.equals(name, "vicky")) {
-            workEthic = new CustomerFriendlyWorkEthic();
-        } else if (Objects.equals(name, "gemma")) {
-            workEthic = new LazyWorkEthic();
-        } else if (Objects.equals(name, "gianluca")) {
-            workEthic = new BadHearingWorkEthic();
-        } else {
-            workEthic = new LazyWorkEthic();
-        }
     }
 
     String getName() {
@@ -25,6 +16,10 @@ class Barista {
 
     WorkEthic getWorkEthic() {
         return workEthic;
+    }
+
+    public void setWorkEthic(WorkEthic workEthic) {
+        this.workEthic = workEthic;
     }
 
     CustomerExperience serve(String customer) {
